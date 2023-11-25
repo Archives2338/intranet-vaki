@@ -1,0 +1,18 @@
+.main {
+  display: flex;
+  height: 100vh;
+  background-color: #f3f9ff;
+
+  .contenido {
+    transition: width 0.8s;
+    overflow: auto;
+  }
+
+  .max {
+    width: calc(100% - 17rem);
+  }
+
+  .min {
+    width: calc(100% - 6rem);
+  }
+}

@@ -1,0 +1,656 @@
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+  "
+>
+  <app-header [value]="img"></app-header>
+  <div class="body">
+    <div class="signboard-wrapper-box">
+      <h2>Comparta la suscripción premium más barato en MetelePlay</h2>
+      <div class="poster">
+        <div class="flex-1 poster-block">
+          <p class="users title"><span data-v-2baa860e="">250,000</span> +</p>
+          <p class="desc">Usuarios</p>
+        </div>
+        <div class="flex-1 poster-block">
+          <p class="users title"><span data-v-2baa860e="">4 +</span> años</p>
+          <p class="desc">Funcionando</p>
+        </div>
+        <div class="flex-1 poster-block">
+          <p class="users title"><span data-v-2baa860e="">150,000</span> +</p>
+          <p class="desc">Participaciones</p>
+        </div>
+      </div>
+    </div>
+    <div class="svg-box">
+      <svg
+        data-v-2baa860e=""
+        class="svg"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        fill="none"
+        version="1.1"
+        viewBox="0 0 1920 30"
+        preserveAspectRatio="none"
+      >
+        <g data-v-2baa860e="">
+          <path
+            data-v-2baa860e=""
+            d="M0,0C0,0,1920,0,1920,0C1920,0,1920,30,1920,30C1920,30,1496.5,-1.66533e-15,961.5,0C426.5,1.66533e-15,0,30,0,30C0,30,0,0,0,0Z"
+            fill-rule="evenodd"
+            fill="#EF534F"
+            fill-opacity="1"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <div class="list-wrapper-box">
+      <div class="list-box">
+        <div class="category-box">
+          <div href="">
+            <div class="category-top">
+              <div class="title net">
+                <p>Producto 1</p>
+              </div>
+              <img class="card" src="assets/svg/e-commerce/card.svg" alt="" />
+              <div class="category-card-box">
+                <div class="category-showcase" style="width: 176px">
+                  <swiper-container #swiperEleme init="false">
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocKyQewIdfWeghI1VZcNkqDWw0V8PCjoPA0xXg7RC-9z=s96-c"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocLR-r4b70GNAJdddpVeM2BYMwR5cmRdKVu9BcjxvgZIwcU=s96-c"
+                      />
+                    </swiper-slide>
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocLR-r4b70GNAJdddpVeM2BYMwR5cmRdKVu9BcjxvgZIwcU=s96-c"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://gosplit.oss-us-east-1.aliyuncs.com/image/default12.png"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://gosplit.oss-us-east-1.aliyuncs.com/image/default12.png"
+                      />
+                    </swiper-slide>
+                  </swiper-container>
+                  <button
+                    class="buttom"
+                    style="
+                      color: rgb(255, 255, 255);
+                      caret-color: rgb(255, 255, 255);
+                    "
+                  >
+                    <img
+                      data-v-0f37be74=""
+                      preset="webp"
+                      src="https://static.gamsgocdn.com/gg2/images/index/plus.webp"
+                    />
+                  </button>
+                </div>
+                <div class="category-tips">
+                  <div>
+                    <p style="color: #ffffff80; margin-top: -6px">
+                      {{ arrayStrings[indice] }}
+                    </p>
+                  </div>
+                </div>
+                <div class="category-money">
+                  <span class="pl-1"> S/.</span>
+                  13.87
+                </div>
+                <div class="category-duration">/ mes</div>
+              </div>
+            </div>
+          </div>
+          <div class="category-bottom">
+            <div>
+              <ul [className]="stateAcordeon ? 'all' : 'part'">
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Renovar la misma cuenta de por vida</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Mantenga todos sus favoritos y listas</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content"> Entrega en tiempo real</span>
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Compatible con dispositivos móviles, PC y TV</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content"> Garantía, garantía de reembolso.</span>
+                </li>
+              </ul>
+              <div class="view-more-box" (click)="viewMore()">
+                <img
+                  src="assets/svg/e-commerce/arrow.svg"
+                  class="arrow-icon"
+                  style="opacity: 0.5"
+                />
+                <img
+                  src="assets/svg/e-commerce/arrow.svg"
+                  class="arrow-icon"
+                  style="opacity: 1"
+                />
+              </div>
+            </div>
+            <button class="btn">
+              <span class="content">COMPRAR AHORA</span>
+            </button>
+            <a class="href">Revisar detalles</a>
+          </div>
+        </div>
+
+        <div class="category-box">
+          <div href="">
+            <div class="category-top">
+              <div class="title net">
+                <p>Produto 2</p>
+              </div>
+              <img class="card" src="assets/svg/e-commerce/card.svg" alt="" />
+              <div class="category-card-box">
+                <div class="category-showcase" style="width: 176px">
+                  <swiper-container #swiperElem2 init="false">
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocKyQewIdfWeghI1VZcNkqDWw0V8PCjoPA0xXg7RC-9z=s96-c"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocLR-r4b70GNAJdddpVeM2BYMwR5cmRdKVu9BcjxvgZIwcU=s96-c"
+                      />
+                    </swiper-slide>
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocLR-r4b70GNAJdddpVeM2BYMwR5cmRdKVu9BcjxvgZIwcU=s96-c"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://gosplit.oss-us-east-1.aliyuncs.com/image/default12.png"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://gosplit.oss-us-east-1.aliyuncs.com/image/default12.png"
+                      />
+                    </swiper-slide>
+                  </swiper-container>
+                  <button
+                    class="buttom"
+                    style="
+                      color: rgb(255, 255, 255);
+                      caret-color: rgb(255, 255, 255);
+                    "
+                  >
+                    <img
+                      data-v-0f37be74=""
+                      preset="webp"
+                      src="https://static.gamsgocdn.com/gg2/images/index/plus.webp"
+                    />
+                  </button>
+                </div>
+                <div class="category-tips">
+                  <div>
+                    <p style="color: #ffffff80; margin-top: -6px">
+                      {{ arrayStrings[indice] }}
+                    </p>
+                  </div>
+                </div>
+                <div class="category-money">
+                  <span class="pl-1"> S/.</span>
+                  10.22
+                </div>
+                <div class="category-duration">/ mes</div>
+              </div>
+            </div>
+          </div>
+          <div class="category-bottom">
+            <div>
+              <ul [className]="stateAcordeon ? 'all' : 'part'">
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Renovar la misma cuenta de por vida</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Mantenga todos sus favoritos y listas</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content"> Entrega en tiempo real</span>
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Compatible con dispositivos móviles, PC y TV</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content"> Garantía, garantía de reembolso.</span>
+                </li>
+              </ul>
+              <div class="view-more-box" (click)="viewMore()">
+                <img
+                  src="assets/svg/e-commerce/arrow.svg"
+                  class="arrow-icon"
+                  style="opacity: 0.5"
+                />
+                <img
+                  src="assets/svg/e-commerce/arrow.svg"
+                  class="arrow-icon"
+                  style="opacity: 1"
+                />
+              </div>
+            </div>
+            <button class="btn">
+              <span class="content">COMPRAR AHORA</span>
+            </button>
+            <a class="href">Revisar detalles</a>
+          </div>
+        </div>
+
+        <div class="category-box">
+          <div href="">
+            <div class="category-top">
+              <div class="title net">
+                <p>Producto 3</p>
+              </div>
+              <img class="card" src="assets/svg/e-commerce/card.svg" alt="" />
+              <div class="category-card-box">
+                <div class="category-showcase" style="width: 176px">
+                  <swiper-container #swiperElem3 init="false">
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocKyQewIdfWeghI1VZcNkqDWw0V8PCjoPA0xXg7RC-9z=s96-c"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocLR-r4b70GNAJdddpVeM2BYMwR5cmRdKVu9BcjxvgZIwcU=s96-c"
+                      />
+                    </swiper-slide>
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocLR-r4b70GNAJdddpVeM2BYMwR5cmRdKVu9BcjxvgZIwcU=s96-c"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://gosplit.oss-us-east-1.aliyuncs.com/image/default12.png"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://gosplit.oss-us-east-1.aliyuncs.com/image/default12.png"
+                      />
+                    </swiper-slide>
+                  </swiper-container>
+                  <button
+                    class="buttom"
+                    style="
+                      color: rgb(255, 255, 255);
+                      caret-color: rgb(255, 255, 255);
+                    "
+                  >
+                    <img
+                      data-v-0f37be74=""
+                      preset="webp"
+                      src="https://static.gamsgocdn.com/gg2/images/index/plus.webp"
+                    />
+                  </button>
+                </div>
+                <div class="category-tips">
+                  <div>
+                    <p style="color: #ffffff80; margin-top: -6px">
+                      {{ arrayStrings[indice] }}
+                    </p>
+                  </div>
+                </div>
+                <div class="category-money">
+                  <span class="pl-1"> S/.</span>
+                  13.87
+                </div>
+                <div class="category-duration">/ mes</div>
+              </div>
+            </div>
+          </div>
+          <div class="category-bottom">
+            <div>
+              <ul [className]="stateAcordeon ? 'all' : 'part'">
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Renovar la misma cuenta de por vida</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Mantenga todos sus favoritos y listas</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content"> Entrega en tiempo real</span>
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Compatible con dispositivos móviles, PC y TV</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content"> Garantía, garantía de reembolso.</span>
+                </li>
+              </ul>
+              <div class="view-more-box" (click)="viewMore()">
+                <img
+                  src="assets/svg/e-commerce/arrow.svg"
+                  class="arrow-icon"
+                  style="opacity: 0.5"
+                />
+                <img
+                  src="assets/svg/e-commerce/arrow.svg"
+                  class="arrow-icon"
+                  style="opacity: 1"
+                />
+              </div>
+            </div>
+            <button class="btn">
+              <span class="content">COMPRAR AHORA</span>
+            </button>
+            <a class="href">Revisar detalles</a>
+          </div>
+        </div>
+
+        <div class="category-box">
+          <div href="">
+            <div class="category-top">
+              <div class="title net">
+                <p>Producto 4</p>
+              </div>
+              <img class="card" src="assets/svg/e-commerce/card.svg" alt="" />
+              <div class="category-card-box">
+                <div class="category-showcase" style="width: 176px">
+                  <swiper-container #swiperElem4 init="false">
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocKyQewIdfWeghI1VZcNkqDWw0V8PCjoPA0xXg7RC-9z=s96-c"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocLR-r4b70GNAJdddpVeM2BYMwR5cmRdKVu9BcjxvgZIwcU=s96-c"
+                      />
+                    </swiper-slide>
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://lh3.googleusercontent.com/a/ACg8ocLR-r4b70GNAJdddpVeM2BYMwR5cmRdKVu9BcjxvgZIwcU=s96-c"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://gosplit.oss-us-east-1.aliyuncs.com/image/default12.png"
+                      />
+                    </swiper-slide>
+
+                    <swiper-slide class="swiper-slide">
+                      <img
+                        class="category-avator"
+                        src="https://gosplit.oss-us-east-1.aliyuncs.com/image/default12.png"
+                      />
+                    </swiper-slide>
+                  </swiper-container>
+                  <button
+                    class="buttom"
+                    style="
+                      color: rgb(255, 255, 255);
+                      caret-color: rgb(255, 255, 255);
+                    "
+                  >
+                    <img
+                      data-v-0f37be74=""
+                      preset="webp"
+                      src="https://static.gamsgocdn.com/gg2/images/index/plus.webp"
+                    />
+                  </button>
+                </div>
+                <div class="category-tips">
+                  <div>
+                    <p style="color: #ffffff80; margin-top: -6px">
+                      {{ arrayStrings[indice] }}
+                    </p>
+                  </div>
+                </div>
+                <div class="category-money">
+                  <span class="pl-1"> S/.</span>
+                  13.87
+                </div>
+                <div class="category-duration">/ mes</div>
+              </div>
+            </div>
+          </div>
+          <div class="category-bottom">
+            <div>
+              <ul [className]="stateAcordeon ? 'all' : 'part'">
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Renovar la misma cuenta de por vida</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Mantenga todos sus favoritos y listas</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content"> Entrega en tiempo real</span>
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content">
+                    Compatible con dispositivos móviles, PC y TV</span
+                  >
+                </li>
+                <li>
+                  <mat-icon class="icon-check">done</mat-icon>
+                  <span class="content"> Garantía, garantía de reembolso.</span>
+                </li>
+              </ul>
+              <div class="view-more-box" (click)="viewMore()">
+                <img
+                  src="assets/svg/e-commerce/arrow.svg"
+                  class="arrow-icon"
+                  style="opacity: 0.5"
+                />
+                <img
+                  src="assets/svg/e-commerce/arrow.svg"
+                  class="arrow-icon"
+                  style="opacity: 1"
+                />
+              </div>
+            </div>
+            <button class="btn" (click)="openModal()">
+              <span class="content">COMPRAR AHORA</span>
+            </button>
+            <a class="href">Revisar detalles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-wrapper-box">
+      <h3>
+        ¿Por qué <span>250,000+</span> personas usan <span>MetelePlay</span>?
+      </h3>
+      <ul class="why-box">
+        <li>
+          <div class="card">
+            <div class="icon-box mr-6">
+              <div class="rocket icon">
+
+              </div>
+            </div>
+            <div class="intro">
+              <h4>Entrega en tiempo real</h4>
+              <div class="desc">
+                Entrega en tiempo real después del pago sin esperas, llegada
+                rápida para disipar sus preocupaciones
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <div class="icon-box mr-6">
+              <div class="pwd icon">
+
+              </div>
+            </div>
+            <div class="intro">
+              <h4>RESET RÁPIDO</h4>
+              <div class="desc">
+                Haga clic <b>en restablecer llave maestra</b> en la página de
+                suscripción sin espera ni operación manual
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+              <div class="icon-box mr-6">
+              <div class="ssl icon">
+
+              </div>
+            </div>
+            <div class="intro">
+              <h4>EL CERTIFFICADO SSL</h4>
+              <div class="desc">
+                El pago se realiza en la condición segura con el certificado de
+                segurida SSL
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+              <div class="icon-box mr-6">
+              <div class="support icon">
+
+              </div>
+            </div>
+            <div class="intro">
+              <h4>24/7 LA ASISTENCIA EN DIRECTO</h4>
+              <div class="desc">
+                brinda servicio al cliente privado en línea las 24 horas, los 7
+                días de la semana, lo ayudará a tener una buena experiencia
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="card">
+              <div class="icon-box mr-6">
+              <div class="subscriber icon">
+
+              </div>
+            </div>
+            <div class="intro">
+              <h4>SUSCRITOS COMPARTIDOS APROPIADOS</h4>
+              <div class="desc">
+                Compartir las suscripciones premium más barato. Suscritos
+                compartidos tienen la prioridad a corresponder a los de mismo
+                país
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+              <div class="icon-box mr-6">
+              <div class="refund icon">
+
+              </div>
+            </div>
+            <div class="intro">
+              <h4>GARANTIA DE REEMBOLSO</h4>
+              <div class="desc">
+                Entrega en tiempo real después del pago sin esperas, llegada
+                rápida para disipar sus preocupaciones tiene de 1 a 20 dias para
+                solicitar el reembolso
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <app-resenia></app-resenia>
+  <app-footer></app-footer>
+  <app-coupon></app-coupon>
+</div>

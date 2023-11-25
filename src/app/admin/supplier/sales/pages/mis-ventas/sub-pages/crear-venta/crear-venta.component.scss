@@ -1,0 +1,347 @@
+
+@import url("/src/assets/scss/table.scss");
+h4 {
+  margin-block-start: 0.98em;
+  margin-block-end: 0.98em;
+  margin-inline-start: 0px;
+   gap: 5px;
+  font-weight: bold;
+  display: inline-flex;
+}
+.main {
+  // width: 95%;
+  // margin: 0 auto 1%;
+
+  .lote_header {
+    margin: 25px 2.5%;
+    .container_title_btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn_create {
+      background: #76c8ba;
+      border-radius: 25px;
+      width: 224px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 18px;
+      text-align: center;
+      letter-spacing: 0.3px;
+      color: #ffffff;
+    }
+    .title_lote_header {
+      font-size: 22px;
+      font-weight: 500;
+      color: #01387b;
+    }
+    .green_divider {
+      margin: 0.5rem 0;
+      border: solid 1px #008467;
+    }
+  }
+
+  .td_blue_title {
+    color: #2271bf;
+    font-size: 15px;
+  }
+
+  .title_observado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: #2271bf;
+    font-weight: bold;
+    img {
+      padding-left: 0.5rem;
+    }
+  }
+
+  .table-body-row {
+    .buttons {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 10px;
+      gap: 10px;
+
+      justify-content: center;
+
+      .fac {
+        width: 88px;
+        height: 32px;
+        background: #008467;
+        border-radius: 5px;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #ffffff;
+      }
+      .pres {
+        width: 88px;
+        height: 32px;
+
+        background: #f6991e;
+        border-radius: 5px;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #ffffff;
+      }
+      .serv {
+        width: 88px;
+        height: 32px;
+        border-radius: 5px;
+        background: #0bb28a;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #ffffff;
+      }
+      .farm {
+        width: 88px;
+        height: 32px;
+        border-radius: 5px;
+        background: #2271bf;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #ffffff;
+      }
+
+      .dden {
+        width: 101px;
+        height: 32px;
+
+        background: #1cd1a4;
+        border-radius: 5px;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #ffffff;
+      }
+    }
+
+    td {
+      padding: 9px;
+      text-align: center;
+      span {
+        margin-right: 9px;
+      }
+    }
+  }
+  .table-body-row-selected {
+    background: #b1e7da;
+    border-radius: 10px;
+    td {
+      padding: 9px;
+      text-align: center;
+    }
+    .button_section {
+      display: flex;
+      justify-content: center;
+      .white_btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        background: #ffffff;
+        color: #008467;
+        border-radius: 5px;
+        .textSustento {
+          margin: 0px !important;
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  .table-body-head {
+    text-align: center !important;
+    td {
+      .mat-sort-header-container {
+        justify-content: center !important;
+      }
+    }
+  }
+
+  .btn_green {
+    padding: 1.3rem 1rem;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #008467;
+  }
+  .btn_green img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.formu{
+  background: #ffffff;
+  box-shadow: 0 0 14px #cae5f980;
+  border-radius: 22px;
+
+  min-height: 20rem;
+
+  display: flex;
+  // align-items: center;
+  flex-direction: column;
+
+  width: 95%;
+  margin: 0 auto 1%;
+  margin-top: 35px;
+  padding: 50px;
+  .div_combo{
+    display: flex;
+    gap: 20px;
+    .btn_create {
+      background: #76c8ba;
+      border-radius: 25px;
+      width: 224px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 18px;
+      text-align: center;
+      letter-spacing: 0.3px;
+      color: #ffffff;
+    }
+  }
+
+  .combo {
+    // width: 100%;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    .combito {
+      width: 250px;
+      height: 48px;
+      background: #f3f9ff;
+      border-radius: 15px;
+      display: flex;
+      font-family: 'Roboto';
+      justify-content: center;
+
+    }
+    ::ng-deep.mat-mdc-select-arrow-wrapper {
+      background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.5 8.70834L11 14.2083L5.5 8.70834' stroke='%234BBD60' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat no-repeat;
+      background-position: center center;
+      background-size: cover;
+      width: 20px;
+      height: 10px;
+      margin-right: 20px;
+    }
+    ::ng-deep.mat-mdc-select-arrow {
+      color: red;
+      opacity: 0;
+    }
+    ::ng-deep .mat-mdc-select-value {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-left: 20px;
+      font-family: 'Metropolis';
+    }
+    ::ng-deep .mat-mdc-select-value-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      /* identical to box height */
+
+      letter-spacing: 0.025px;
+
+      color: #8C8F9C;
+    }
+    ::ng-deep .mat-mdc-select-min-line{
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.025px;
+      color: #8C8F9C;
+
+    }
+  }
+  ::ng-deep .mat-mdc-select-placeholder {
+
+    color: #8C8F9C !important;
+    font-size: 16px !important;
+    font-family: Roboto !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.025px !important;
+
+  }
+
+  ::ng-deep.mdc-menu-surface.mat-mdc-select-panel {
+    width: 100%;
+    border-radius: 24px !important;
+    max-height: 275px;
+    position: static;
+    outline: 0;
+    margin: 0;
+    padding: 6px 0 !important;
+    list-style-type: none;
+    box-shadow: 0px 0px 4px 0px rgba(162, 208, 255, 0.48);
+
+  }
+
+  ::ng-deep .mat-mdc-option .mdc-list-item__primary-text{
+    color: #8C8F9C;
+    font-size: 16px;
+    font-family: "Roboto";
+    letter-spacing: 0.025px;
+  }
+  ::ng-deep .mdc-text-field--no-label:not(.mdc-text-field--textarea) .mat-mdc-form-field-input-control.mdc-text-field__input, .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control{
+    color: #8C8F9C;
+      font-size: 16px;
+      font-family: "Roboto";
+      letter-spacing: 0.025px;
+  }
+  ::ng-deep .mat-mdc-option:hover:not(.mdc-list-item--disabled), .mat-mdc-option:focus:not(.mdc-list-item--disabled), .mat-mdc-option.mat-mdc-option-active, .mat-mdc-option.mdc-list-item--selected:not(.mat-mdc-option-multiple):not(.mdc-list-item--disabled){
+    background-color: #F3F9FF !important;
+  }
+
+  ::ng-deep .mat-mdc-option.mat-mdc-option-active, .mat-mdc-option.mdc-list-item--selected:not(.mat-mdc-option-multiple):not(.mdc-list-item--disabled){
+    background-color: #F3F9FF !important;
+  }
+
+}

@@ -1,0 +1,16 @@
+<div class="main">
+  <!-- MODALES PARA TEST -->
+  <!-- <app-contacto-mail email_copy="facturacion.operaciones@gruporedsalud.com"></app-contacto-mail> -->
+  <!-- <app-contacto-mail email_copy="facturacion.operaciones@gruporedsalud.com" [open]="this.openModal" (openChange)="closeModalTypeFiles($event)" ></app-contacto-mail> -->
+  <!-- <app-cerrar-sesion></app-cerrar-sesion> -->
+  <!-- <app-observado-exito></app-observado-exito> -->
+  <!-- <app-observado-error></app-observado-error> -->
+  <!--  -->
+  <app-drawer (cl)="oyc($event)    "  ></app-drawer>
+
+  <div class="contenido {{ class() }} ">
+    <app-header></app-header>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>

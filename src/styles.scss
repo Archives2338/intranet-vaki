@@ -1,0 +1,354 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$red-notedef-primary: mat.define-palette(mat.$indigo-palette);
+$red-notedef-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$paleta: (
+  50: #f9e4e5,
+  100: #f0bbbd,
+  200: #e68e91,
+  300: #db6165,
+  400: #d43f44,
+  500: #9597C7,
+  600: #c71a1f,
+  700: #c0151a,
+  800: #b91115,
+  900: #ad0a0c,
+  A100: #ffdada,
+  A200: #ffa7a7,
+  A400: #ff7475,
+  A700: #ff5a5b,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+$paleta2: (
+  50: #fef3e4,
+  100: #fce0bc,
+  200: #fbcc8f,
+  300: #f9b862,
+  400: #f7a840,
+  500: #f6991e,
+  600: #f5911a,
+  700: #f38616,
+  800: #f27c12,
+  900: #ef6b0a,
+  A100: #ffffff,
+  A200: #ffefe5,
+  A400: #ffcfb3,
+  A700: #ffbf99,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+
+
+// The warn palette is optional (defaults to red).
+
+@import "./assets/scss/fonts.scss";
+@import "./assets/scss/normalize.scss";
+
+$red-notedef-primary: mat.define-palette($paleta);
+$red-notedef-accent: mat.define-palette($paleta2);
+
+// The warn palette is optional (defaults to red).
+$red-notedef-warn: mat.define-palette(mat.$red-palette);
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$red-notedef-theme: mat.define-light-theme((
+  color: (
+    primary: $red-notedef-primary,
+    accent: $red-notedef-accent,
+    warn: $red-notedef-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($red-notedef-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-menu-panel {
+  background: #ffffff;
+  border-radius: 22px !important;
+  box-shadow: 0px 0px 10px rgba(198, 226, 255, 0.549847);
+  color: #9597C7;
+  padding: 10px;
+  width: 280px;
+  p {
+    color: #9597C7;
+  }
+
+  .mat-menu-item {
+    height: auto;
+  }
+}
+
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0 auto;
+  width: 85%;
+  h4 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  .mat-expansion-panel-body {
+    padding: 0;
+  }
+}
+
+.mat-expansion-panel-header-description,
+.mat-expansion-indicator::after {
+  color: #9597C7;
+}
+
+.mat-datepicker-toggle-default-icon {
+  color: #9597C7;
+}
+
+.dialog-actions .mat-dialog-container,
+.dialog-form .mat-dialog-container {
+  box-shadow: 0px 0px 8px rgba(146, 142, 142, 0.216226);
+  position: relative;
+}
+
+.mat-select-value {
+  color: #80848e;
+}
+
+.error {
+  margin-top: 1.2rem;
+  margin-left: 1rem;
+}
+
+.dialog-declaracion .mat-dialog-container {
+  border-radius: 14px;
+}
+
+.green-snackbar {
+  background: #fff;
+  color: #01387b;
+  // border: 2px dashed #01387b;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.mat-simple-snackbar-action {
+  color: black;
+}
+.mat-simple-snackbar span {
+  font-size: 15px;
+}
+
+.sn:hover {
+  background-color: transparent !important;
+}
+
+.mat-dialog-container {
+  border-radius: 25px !important;
+}
+.mdc-tooltip__surface {
+  font-style: normal!important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 13px !important;
+  display: flex !important;
+  align-items: center!important ;
+  text-align: center !important;
+  color: #01387B !important;
+  background: white !important;
+
+}
+
+// .custom-tooltip {
+//   background-color:white;
+//   height: auto;
+//   color: #000 !important;
+//   font-weight: 400;
+//   border-radius: 5px;
+//   font-size: 13px;
+//   padding: 8px;
+//   text-align: center;
+//   box-shadow: 0 1px 3px 0 rgb(28 28 28 / 35%);
+// }
+
+// .inp{
+//   width: 95%;
+//   margin-bottom: 10px;
+// }
+
+// .buscador-input2 {
+//   width: 95%;
+//   background: #f3f9ff;
+//   border: none;
+//   color: #80848e;
+//   font-size: 16px;
+//   // padding: 5.2% 2.2rem;
+//   outline: none;
+//   font-size: 15px;
+//   border-radius: 24px;
+//   padding: 0 4%;
+//   box-sizing: border-box;
+//   height: 53px;
+// }
+// .buscador-input1 {
+//   width: 49.4%;
+//   background: #f3f9ff;
+//   border: none;
+//   color: #80848e;
+//   font-size: 16px;
+//   outline: none;
+//   font-size: 15px;
+//   border-radius: 24px;
+//   padding: 0 4%;
+//   box-sizing: border-box;
+//   height: 53px;
+// }
+// .nombres{
+//   display: flex;
+// }
+
+// .mat-form-field-flex{
+//   padding-left: 2.5%;
+// }
+
+// .seleccion{
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// .bu{
+//   display: flex;
+//   width: 100%;
+//   justify-content: space-evenly;
+// }
+
+.vee {
+  background: #9597C7 !important;
+}
+.azu {
+  background: #2271bf !important;
+}
+.ce {
+  background: #a2d1ff !important;
+  color: #6a7183 !important;
+}
+.ver {
+  background-color: #9597C7;
+  color: white;
+}
+
+input.mat-input-element {
+  margin-top: -0.0625em;
+  color: #85859d;
+}
+
+.mat-select-arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid;
+  margin: 0 4px;
+  color: #9597C7;
+}
+
+// tab
+.mat-tab-label .mat-tab-label-content {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  // color: #9597C7;
+  color: #2271bf;
+  font-size: 17px;
+  text-transform: capitalize;
+}
+
+// .mat-tab-link:not(.mat-tab-label-active) {
+//   color: #9597C7 !important;
+// }
+
+// ::ng-deep.mat-tab-label.mat-tab-label-active {
+//   color: #005439;
+// }
+
+.mat-tab-label.mat-tab-label-active {
+  // color: #005439 !important;
+  color: #01397d !important;
+}
+
+/* margin en el tab */
+.mat-tab-group {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin-top: -16px;
+}
+
+/*radio*/
+.mat-radio-label-content {
+  color: #7c7e82;
+}
+/* desaparecer el borde de abajo del tab */
+.mat-tab-nav-bar,
+.mat-tab-header {
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid #ffffff;
+}
+
+//fd
+.page-number span {
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  height: 28px;
+  width: 28px;
+  color: #6a7183;
+}

@@ -1,0 +1,57 @@
+<form [formGroup]="formCreate" class="content-profile">
+    <div class="profile-position">
+        <div class="profile-image">
+            <div class="image">
+                <img class="main-img" src="{{srcImage || 'assets/img/chinitasonriendo2.jpeg'}}" alt="profile">
+                <label class="button-edit" >
+                    <img src="assets/icons/edit.svg" alt="edit">
+                    <input #fileInput type="file" accept="image/*" multiple="false" (change)="onChangeImage($event)" style="display: none;"/>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="profile-information">
+        <div class="information-general">
+            <!-- <span>DOCTOR</span> -->
+            <h1  #editName contenteditable="true" (keyup)="onChangeInformation($event)">{{name}}</h1>
+        </div>
+        <div class="information-about">
+            <h2>Descripción</h2>
+            <p #editp contenteditable="true" (keyup)="onChangeInformation($event)">{{description}}</p>
+        </div>
+        <div class="information-mail">
+            <div class="label">Correo electrónico</div>
+            <mat-form-field appearance="outline" class="inputRow">
+                <input
+                type="text"
+                (change)="saveChanges()"
+                matInput
+                placeholder="correo@correo.com"
+                formControlName="mail"
+                />
+            </mat-form-field>
+        </div>
+        <div class="information-department">
+            <div class="label">Departamento de residencia</div>
+            <div  class="combo">
+                <mat-select class="combito" formControlName="department" placeholder="Ingresa" (selectionChange)="saveChanges()">
+                    <mat-option *ngFor="let department of departments" [value]="department.id">
+                        {{department.name}}
+                    </mat-option>
+                </mat-select>
+            </div>
+        </div>
+        <div class="information-phone">
+            <div class="label">Número de celular</div>
+            <mat-form-field appearance="outline" class="inputRow">
+                <input
+                type="text"
+                matInput
+                (change)="saveChanges()"
+                placeholder="número"
+                formControlName="phone"
+                />
+            </mat-form-field>
+        </div>
+    </div>
+</form>

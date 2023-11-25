@@ -1,0 +1,202 @@
+<div class="drawer {{ class('drawer') }}">
+  <img
+    src="/assets/svg/drawer/drawer-arrow.svg"
+    alt="arrow"
+    class="boton"
+    (click)="oyc()"
+  />
+  <div class="logo" (click)="go('init', '')">
+    <img src="/assets/svg/Logo-2.svg" alt="logo" />
+  </div>
+  <!-- <div class="change_platform" *ngIf="plataformas.length != 0">
+    <button mat-flat-button class="btn-change" (click)="togglePanel()">
+      <div class="txt">
+        <p *ngIf="class('drawer')=='opened'">Cambio de plataforma</p>
+      </div>
+    </button>
+  </div> -->
+  <div class=" {{ class('drawer') == 'opened' ? 'containerLogo' : 'opacity' }} ">
+    <div class="logo">
+
+       <!-- Esta chinita es de Prueba solamente -->
+        <img src="{{ srcImage }}" alt=""
+        style="width:100%;height:100%;object-fit: cover;border-radius:50%;" class=" {{ class('drawer') == 'opened' ? 'containerLogo' : 'opacity' }} ">
+    </div>
+  </div>
+  <!-- <mat-expansion-panel [expanded]="panelOpenState">
+    <div class="logos">
+      <img
+
+
+        alt=""
+
+      />
+    </div>
+  </mat-expansion-panel> -->
+
+  <div class="title">
+    <p class=" {{ class('drawer') == 'opened' ? '' : 'opacity' }} ">
+      {{name_supplier}}
+    </p>
+
+    <span class=" {{ class('drawer') == 'opened' ? 'subtitle' : 'opacity' }} ">
+      Ver datos corporativos
+     </span>
+  </div>
+
+
+
+
+  <div class="modulos">
+    <mat-accordion >
+      <mat-expansion-panel
+        class="modulo {{ class('modulo') }}"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header
+          ><img
+          class="icon-activo"
+          src="/assets/svg/drawer/platforms.svg"
+            alt=""
+            style="margin-right: 8px; height: 25px"
+          />
+          <img
+          src="/assets/svg/drawer/platforms-inac.svg"
+          class="icon-inactivo"
+            alt=""
+            style="margin-right: 8px; height: 25px"
+          />
+          <h4 class="panel-title-text "> Servicios </h4>
+        </mat-expansion-panel-header>
+        <button
+          mat-flat-button
+          class="vista"
+          (click)="goToPlatform()"
+
+        >
+          <div class="txt" >
+            <img src="assets/svg/drawer/guion-verde.svg" alt="" />
+            <p>
+              Plataformas
+            </p>
+          </div>
+        </button>
+
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel
+        class="modulo {{ class('modulo') }}"
+
+      >
+        <mat-expansion-panel-header
+          > <img
+          class="icon-activo"
+          src="/assets/svg/drawer/ventas-inac.svg"
+            alt=""
+            style="margin-right: 8px; height: 25px"
+          />
+          <img
+          class="icon-inactivo"
+          src="/assets/svg/drawer/ventas.svg"
+            alt=""
+            style="margin-right: 8px; height: 25px"
+          />
+          <h4  class="panel-title-text "> Ventas </h4>
+        </mat-expansion-panel-header>
+        <button
+          href="admin/sales/mis-ventas"
+          mat-flat-button
+          class="vista"
+          (click)="goToMisVentas()"
+
+        >
+          <div class="txt" >
+            <img src="assets/svg/drawer/guion-verde.svg" alt="" />
+            <p>
+             Mis Ventas
+            </p>
+          </div>
+        </button>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel
+        class="modulo {{ class('modulo') }}"
+
+      >
+        <mat-expansion-panel-header
+          > <img
+          class="icon-activo"
+          src="/assets/svg/drawer/afiliado.svg"
+            alt=""
+            style="margin-right: 8px; height: 25px"
+          />
+          <img
+          class="icon-inactivo"
+          src="/assets/svg/drawer/afiliado-inac.svg"
+            alt=""
+            style="margin-right: 8px; height: 25px"
+          />
+          <h4  class="panel-title-text "> Clientes </h4>
+        </mat-expansion-panel-header>
+        <button
+          mat-flat-button
+          class="vista"
+          (click)="goToSeguimientoCliente()"
+
+        >
+          <div class="txt" >
+            <img src="assets/svg/drawer/guion-verde.svg" alt="" />
+            <p>
+             Seguimiento de Clientes
+            </p>
+          </div>
+        </button>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel
+        class="modulo {{ class('modulo') }}"
+
+      >
+        <mat-expansion-panel-header
+          > <img
+          class="icon-activo"
+          src="/assets/svg/drawer/afiliado.svg"
+            alt=""
+            style="margin-right: 8px; height: 25px"
+          />
+          <img
+          class="icon-inactivo"
+          src="/assets/svg/drawer/afiliado-inac.svg"
+            alt=""
+            style="margin-right: 8px; height: 25px"
+          />
+          <h4  class="panel-title-text ">Cobros </h4>
+        </mat-expansion-panel-header>
+        <button
+          mat-flat-button
+          class="vista"
+          (click)="goToProximosCobros()"
+
+        >
+          <div class="txt" >
+            <img src="assets/svg/drawer/guion-verde.svg" alt="" />
+            <p>
+             Mis proximos cobros
+            </p>
+          </div>
+        </button>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <!-- <app-footer class_item="{{ class('drawer') == 'opened' ? 'item' : 'item_close' }}"></app-footer> -->
+
+</div>

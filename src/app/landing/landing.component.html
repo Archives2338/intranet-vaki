@@ -1,0 +1,38 @@
+<div class="main">
+  <div class="header">
+    <img src="/assets/svg/Logo-2.svg" alt="">
+
+    <button class="btn">
+      <mat-icon class="icon" style="color: white;"> phonelink_ring</mat-icon>
+      989993602</button>
+  </div>
+  <div class="contenedor">
+    <div class="header-contenedor">
+      <p class="text">CONSULTA DE SERVICIOS</p>
+    </div>
+    <div class="form" [formGroup]="formConsulta">
+
+      <mat-form-field appearance="outline" class="input" style="margin-top: 15px;">
+        <input
+
+          type="number"
+          pattern="[0-9]*" inputmode="numeric"
+          matInput
+          placeholder="Ingresa el Numero de Telefono"
+          formControlName="celular"
+        />
+
+        <mat-error>Ingrese un Numero Valido</mat-error>
+      </mat-form-field>
+
+      <button class="search" mat-flat-button [disabled]="this.formConsulta.invalid" (click)="getInfoClient()">
+        <p class="text"> Buscar</p>
+        <mat-icon class="icon" style="color: white;">search</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <app-table-info-service [data]="dataInfoService" *ngIf="dataInfoService.length>0" style="width: 100%;"></app-table-info-service>
+
+  <app-loading *ngIf="loading"></app-loading>
+</div>

@@ -1,0 +1,22 @@
+
+<div class="uploadContainer" [formGroup]="selectPlatform">
+  <h3>Plataformas</h3>
+  <div class="containerBtn">
+    <div  class="combo">
+      <mat-select  formControlName="platform" class="combito" placeholder="Ingresa" (ngModelChange)="searchPlatform()">
+          <mat-option *ngFor="let item of platForms" [value]="item.id_platform">
+            {{item.name}}
+          </mat-option>
+      </mat-select>
+    </div>
+
+
+
+    <!-- <p>Subir</p> -->
+
+  </div>
+
+</div>
+
+<app-table-platforms [selectedValue]="infoPlatform" *ngIf="infoPlatform"> </app-table-platforms>
+<app-loading *ngIf="loading"></app-loading>

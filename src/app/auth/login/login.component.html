@@ -1,0 +1,39 @@
+<form class="login-form" [formGroup]="formCreate">
+  <div style="display: flex; justify-content: center;">
+    <img src="/assets/svg/metelePlay.svg" alt="logo"  style="width: 120px;"/>
+  </div>
+
+    <h2>Inicio de sesión</h2>
+    <div>
+        <h3>Email</h3>
+        <mat-form-field appearance="outline" class="input">
+          <input
+            type="text"
+            matInput
+            placeholder="Correo"
+            formControlName="mail_account"
+          />
+          <div matSuffix >
+            <img src="assets/icons/mail.svg" alt="mail" />
+          </div>
+          <mat-error>Ingrese un correo válido</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <h3>Password</h3>
+        <mat-form-field appearance="outline" class="input">
+          <input
+            type="password"
+            matInput
+            placeholder="Contraseña"
+            formControlName="password"
+          />
+          <div matSuffix *ngIf="true">
+            <img src="assets/icons/password.svg" alt="pass"/>
+          </div>
+          <mat-error>Ingrese una contraseña valida</mat-error>
+        </mat-form-field>
+    </div>
+    <p title="guarda tu contraseña mongol" routerLink="/auth/forgot-password">¿Has olvidado tu contraseña?</p>
+    <button type="button" (click)="login()">Ingresar</button>
+</form>

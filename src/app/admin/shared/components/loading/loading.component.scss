@@ -1,0 +1,496 @@
+
+
+.cargando {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+
+$scale-step:0.05; // tamaño de crecimiento entre los circulos
+
+$color-1: var(--color-1);
+$color-2: var(--color-2);
+$color-3: var(--color-3);
+$color-4: var(--color-4);
+$color-5: var(--color-5);
+$color-6: var(--color-6);
+$color-7: var(--color-7);
+$color-8: var(--color-8);
+$color-9: var(--color-9);
+$color-10: var(--color-10);
+$color-11: var(--color-11);
+$color-12: var(--color-12);
+
+$transform-1: var(--transform-1);
+$transform-2: var(--transform-2);
+$transform-3: var(--transform-3);
+$transform-4: var(--transform-4);
+$transform-5: var(--transform-5);
+$transform-6: var(--transform-6);
+$transform-7: var(--transform-7);
+$transform-8: var(--transform-8);
+$transform-9: var(--transform-9);
+$transform-10: var(--transform-10);
+$transform-11: var(--transform-11);
+$transform-12: var(--transform-12);
+
+.loader {
+    width: 12em;
+    height: 12em;
+    font-size: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    // background-color: white;
+    border-radius: 50%;
+    transform: rotate(30deg);
+    animation: colorSwap 1s infinite; //1s tiempo en dar vuelte a la animacion
+
+    p{
+        color: #14BAB5;
+        position: absolute;
+        rotate: -30deg;
+        margin: 0;
+        font-weight: bold;
+    }
+
+
+    .circle {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    position: absolute;
+    background-color: red;
+
+        &:nth-child(1) {
+            top: 0;
+            left: 50%;
+            transform: $transform-1;
+            background-color: $color-1;
+        }
+
+        &:nth-child(2) {
+            top: 5%;
+            left: 62%;
+            transform: $transform-2;
+            background-color: $color-2;
+        }
+
+        &:nth-child(3) {
+            top: 20.5%;
+            left: 77.5%;
+            transform: $transform-3;
+            background-color: $color-3;
+        }
+
+        &:nth-child(4) {
+            top: 50%;
+            right: 0;
+            transform: $transform-4;
+            background-color: $color-4;
+        }
+
+        &:nth-child(5) {
+            bottom: 20.5%;
+            left: 77.5%;
+            transform: $transform-5;
+            background-color: $color-5;
+        }
+
+        &:nth-child(6) {
+            bottom: 5%;
+            left: 62%;
+            transform: $transform-6;
+            background-color: $color-6;
+        }
+
+        &:nth-child(7) {
+            bottom: 0;
+            left: 50%;
+            transform: $transform-7;
+            background-color: $color-7;
+        }
+
+        &:nth-child(8) {
+            bottom: 5%;
+            right: 62%;
+            transform: $transform-8;
+            background-color: $color-8;
+        }
+
+        &:nth-child(9) {
+            bottom: 20.5%;
+            right: 77.5%;
+            transform: $transform-9;
+            background-color: $color-9;
+        }
+
+        &:nth-child(10) {
+            top: 50%;
+            left: 0;
+            transform: $transform-10;
+            background-color: $color-10;
+        }
+
+        &:nth-child(11) {
+            top: 20.5%;
+            right: 77.5%;
+            transform: $transform-11;
+            background-color: $color-11;
+        }
+
+        &:nth-child(12) {
+            top: 5%;
+            right: 62%;
+            transform: $transform-12;
+            background-color: $color-12;
+        }
+    }
+}
+
+@keyframes colorSwap {
+
+    0%, 100% {
+        /*colors*/
+        --color-1: #D7FAF9;
+        --color-2: #CFFFFE;
+        --color-3: #B0FFFD;
+        --color-4: #8AFBF8;
+        --color-5: #3EECE7;
+        --color-6: #36E5E0;
+        --color-7: #36E5E0;
+        --color-8: #2DDCD7;
+        --color-9: #1BC7C2;
+        --color-10: #1BC7C2;
+        --color-11: #14BAB5;
+        --color-12: #14BAB5;
+        /* transforms */
+        --transform-1: translate(-50%, 0) scale(0.5);
+        --transform-2: scale(calc(0.5 + #{$scale-step} * 1));
+        --transform-3: scale(calc(0.5 + #{$scale-step} * 2));
+        --transform-4: translate(0,-50%) scale(calc(0.5 + #{$scale-step} * 3));
+        --transform-5: scale(calc(0.5 + #{$scale-step} * 4));
+        --transform-6: scale(calc(0.5 + #{$scale-step} * 5));
+        --transform-7: translate(-50%, 0) scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-8: scale(calc(0.5 + #{$scale-step} * 7));
+        --transform-9: scale(calc(0.5 + #{$scale-step} * 8));
+        --transform-10: translate(0,-50%)  scale(calc(0.5 + #{$scale-step} * 9));
+        --transform-11: scale(calc(0.5 + #{$scale-step} * 10));
+        --transform-12: scale(1);
+    }
+    8.33% {
+        --color-1: #14BAB5;
+        --color-2: #D7FAF9;
+        --color-3: #CFFFFE;
+        --color-4: #B0FFFD;
+        --color-5: #8AFBF8;
+        --color-6: #3EECE7;
+        --color-7: #36E5E0;
+        --color-8: #36E5E0;
+        --color-9: #2DDCD7;
+        --color-10: #1BC7C2;
+        --color-11: #1BC7C2;
+        --color-12: #14BAB5;
+        --transform-1: translate(-50%, 0) scale(1);
+        --transform-2: scale(0.5);
+        --transform-3: scale(calc(0.5 + #{$scale-step} * 1));
+        --transform-4: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 2));
+        --transform-5: scale(calc(0.5 + #{$scale-step} * 3));
+        --transform-6: scale(calc(0.5 + #{$scale-step} * 4));
+        --transform-7: translate(-50%, 0)  scale(calc(0.5 + #{$scale-step} * 5));
+        --transform-8: scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-9: scale(calc(0.5 + #{$scale-step} * 7));
+        --transform-10: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 8));
+        --transform-11: scale(calc(0.5 + #{$scale-step} * 9));
+        --transform-12: scale(calc(0.5 + #{$scale-step} * 10));
+    }
+    16.66% {
+        --color-1: #14BAB5;
+        --color-2: #14BAB5;
+        --color-3: #D7FAF9;
+        --color-4: #CFFFFE;
+        --color-5: #B0FFFD;
+        --color-6: #8AFBF8;
+        --color-7: #3EECE7;
+        --color-8: #36E5E0;
+        --color-9: #36E5E0;
+        --color-10: #2DDCD7;
+        --color-11: #1BC7C2;
+        --color-12: #1BC7C2;
+        --transform-1: translate(-50%, 0) scale(calc(0.5 + #{$scale-step} * 11));
+        --transform-2: scale(1);
+        --transform-3: scale(0.5);
+        --transform-4: translate(0, -50%)  scale(calc(0.5 + #{$scale-step} * 1));
+        --transform-5: scale(calc(0.5 + #{$scale-step} * 2));
+        --transform-6: scale(calc(0.5 + #{$scale-step} * 3));
+        --transform-7: translate(-50%, 0)  scale(calc(0.5 + #{$scale-step} * 4));
+        --transform-8: scale(calc(0.5 + #{$scale-step} * 5));
+        --transform-9: scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-10: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 7));
+        --transform-11: scale(calc(0.5 + #{$scale-step} * 8));
+        --transform-12: scale(calc(0.5 + #{$scale-step} * 9));
+    }
+
+    25% {
+        --color-1: #1BC7C2;
+        --color-2: #14BAB5;
+        --color-3: #14BAB5;
+        --color-4: #D7FAF9;
+        --color-5: #CFFFFE;
+        --color-6: #B0FFFD;
+        --color-7: #8AFBF8;
+        --color-8: #3EECE7;
+        --color-9: #36E5E0;
+        --color-10: #36E5E0;
+        --color-11: #2DDCD7;
+        --color-12: #1BC7C2;
+        --transform-1: translate(-50%, 0) scale(calc(0.5 + #{$scale-step} * 10));
+        --transform-2: scale(calc(0.5 + #{$scale-step} * 11));
+        --transform-3: scale(1);
+        --transform-4: translate(0, -50%)  scale(0.5);
+        --transform-5: scale(calc(0.5 + #{$scale-step} * 1));
+        --transform-6: scale(calc(0.5 + #{$scale-step} * 2));
+        --transform-7: translate(-50%, 0) scale(calc(0.5 + #{$scale-step} * 3));
+        --transform-8: scale(calc(0.5 + #{$scale-step} * 4));
+        --transform-9: scale(calc(0.5 + #{$scale-step} * 5));
+        --transform-10: translate(0, -50%)  scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-11: scale(calc(0.5 + #{$scale-step} * 7));
+        --transform-12: scale(calc(0.5 + #{$scale-step} * 8));
+    }
+
+    33.33% {
+        --color-1: #1BC7C2;
+        --color-2: #1BC7C2;
+        --color-3: #14BAB5;
+        --color-4: #14BAB5;
+        --color-5: #D7FAF9;
+        --color-6: #CFFFFE;
+        --color-7: #B0FFFD;
+        --color-8: #8AFBF8;
+        --color-9: #3EECE7;
+        --color-10: #36E5E0;
+        --color-11: #36E5E0;
+        --color-12: #2DDCD7;
+        --transform-1: translate(-50%, 0)  scale(calc(0.5 + #{$scale-step} * 9));
+        --transform-2: scale(calc(0.5 + #{$scale-step} * 10));
+        --transform-3: scale(calc(0.5 + #{$scale-step} * 11));
+        --transform-4: translate(0,-50%)  scale(1);
+        --transform-5: scale(0.5);
+        --transform-6: scale(calc(0.5 + #{$scale-step} * 1));
+        --transform-7: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 2));
+        --transform-8: scale(calc(0.5 + #{$scale-step} * 3));
+        --transform-9: scale(calc(0.5 + #{$scale-step} * 4));
+        --transform-10: translate(0,-50%) scale(calc(0.5 + #{$scale-step} * 5));
+        --transform-11: scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-12: scale(calc(0.5 + #{$scale-step} * 7));
+    }
+
+    41.66% {
+        --color-1: #2DDCD7;
+        --color-2: #1BC7C2;
+        --color-3: #1BC7C2;
+        --color-4: #14BAB5;
+        --color-5: #14BAB5;
+        --color-6: #D7FAF9;
+        --color-7: #CFFFFE;
+        --color-8: #B0FFFD;
+        --color-9: #8AFBF8;
+        --color-10: #3EECE7;
+        --color-11: #36E5E0;
+        --color-12: #36E5E0;
+        --transform-1: translate(-50%, 0) scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-2: scale(calc(0.5 + #{$scale-step} * 7));
+        --transform-3: scale(calc(0.5 + #{$scale-step} * 8));
+        --transform-4: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 9));
+        --transform-5: scale(calc(0.5 + #{$scale-step} * 10));
+        --transform-6: scale(1);
+        --transform-7: translate(-50%, 0)  scale(0.5);
+        --transform-8: scale(calc(0.5 + #{$scale-step} * 1));
+        --transform-9: scale(calc(0.5 + #{$scale-step} * 2));
+        --transform-10: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 3));
+        --transform-11: scale(calc(0.5 + #{$scale-step} * 4));
+        --transform-12: scale(calc(0.5 + #{$scale-step} * 5));
+    }
+
+    50% {
+        --color-1: #36E5E0;
+        --color-2: #2DDCD7;
+        --color-3: #1BC7C2;
+        --color-4: #1BC7C2;
+        --color-5: #14BAB5;
+        --color-6: #14BAB5;
+        --color-7: #D7FAF9;
+        --color-8: #CFFFFE;
+        --color-9: #B0FFFD;
+        --color-10: #8AFBF8;
+        --color-11: #3EECE7;
+        --color-12: #36E5E0;
+        --transform-1: translate(-50%, 0) scale(calc(0.5 + #{$scale-step} * 5));
+        --transform-2: scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-3: scale(calc(0.5 + #{$scale-step} * 7));
+        --transform-4: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 8));
+        --transform-5: scale(calc(0.5 + #{$scale-step} * 9));
+        --transform-6: scale(calc(0.5 + #{$scale-step} * 10));
+        --transform-7: translate(-50%, 0) scale(1);
+        --transform-8: scale(0.5);
+        --transform-9: scale(calc(0.5 + #{$scale-step} * 1));
+        --transform-10: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 2));
+        --transform-11: scale(calc(0.5 + #{$scale-step} * 3));
+        --transform-12: scale(calc(0.5 + #{$scale-step} * 4));
+    }
+
+    58.33% {
+        --color-1: #3EECE7;
+        --color-2: #36E5E0;
+        --color-3: #2DDCD7;
+        --color-4: #1BC7C2;
+        --color-5: #1BC7C2;
+        --color-6: #14BAB5;
+        --color-7: #14BAB5;
+        --color-8: #D7FAF9;
+        --color-9: #CFFFFE;
+        --color-10: #B0FFFD;
+        --color-11: #8AFBF8;
+        --color-12: #3EECE7;
+        --transform-1: translate(-50%, 0)  scale(calc(0.5 + #{$scale-step} * 4));
+        --transform-2: scale(calc(0.5 + #{$scale-step} * 5));
+        --transform-3: scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-4: translate(0, -50%)  scale(calc(0.5 + #{$scale-step} * 7));
+        --transform-5: scale(calc(0.5 + #{$scale-step} * 8));
+        --transform-6: scale(calc(0.5 + #{$scale-step} * 9));
+        --transform-7: translate(-50%, 0) scale(calc(0.5 + #{$scale-step} * 10));
+        --transform-8: scale(1);
+        --transform-9:  scale(0.5);
+        --transform-10: translate(0, -50%)  scale(calc(0.5 + #{$scale-step} * 1));
+        --transform-11: scale(calc(0.5 + #{$scale-step} * 2));
+        --transform-12:  scale(calc(0.5 + #{$scale-step} * 3));
+    }
+
+    66.66% {
+        --color-1: #8AFBF8;
+        --color-2: #3EECE7;
+        --color-3: #36E5E0;
+        --color-4: #2DDCD7;
+        --color-5: #1BC7C2;
+        --color-6: #1BC7C2;
+        --color-7: #14BAB5;
+        --color-8: #14BAB5;
+        --color-9: #D7FAF9;
+        --color-10: #CFFFFE;
+        --color-11: #B0FFFD;
+        --color-12: #8AFBF8;
+        --transform-1: translate(-50%, 0) scale(calc(0.5 + #{$scale-step} * 3));
+        --transform-2: scale(calc(0.5 + #{$scale-step} * 4));
+        --transform-3: scale(calc(0.5 + #{$scale-step} * 5));
+        --transform-4: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-5: scale(calc(0.5 + #{$scale-step} * 7));
+        --transform-6: scale(calc(0.5 + #{$scale-step} * 8));
+        --transform-7: translate(-50%, 0)  scale(calc(0.5 + #{$scale-step} * 9));
+        --transform-8: scale(calc(0.5 + #{$scale-step} * 10));
+        --transform-9: scale(1);
+        --transform-10: translate(0, -50%) scale(0.5);
+        --transform-11: scale(calc(0.5 + #{$scale-step} * 1));
+        --transform-12: scale(calc(0.5 + #{$scale-step} * 2));
+
+    }
+
+    75% {
+        --color-1: #B0FFFD;
+        --color-2: #8AFBF8;
+        --color-3: #3EECE7;
+        --color-4: #36E5E0;
+        --color-5: #2DDCD7;
+        --color-6: #1BC7C2;
+        --color-7: #1BC7C2;
+        --color-8: #14BAB5;
+        --color-9: #14BAB5;
+        --color-10: #D7FAF9;
+        --color-11: #CFFFFE;
+        --color-12: #B0FFFD;
+        --transform-1: translate(-50%, 0)  scale(calc(0.5 + #{$scale-step} * 2));
+        --transform-2: scale(calc(0.5 + #{$scale-step} * 3));
+        --transform-3: scale(calc(0.5 + #{$scale-step} * 4));
+        --transform-4: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 5));
+        --transform-5: scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-6: scale(calc(0.5 + #{$scale-step} * 7));
+        --transform-7: translate(-50%, 0)  scale(calc(0.5 + #{$scale-step} * 8));
+        --transform-8: scale(calc(0.5 + #{$scale-step} * 9));
+        --transform-9: scale(calc(0.5 + #{$scale-step} * 10));
+        --transform-10: translate(0, -50%) scale(1);
+        --transform-11: scale(0.5);
+        --transform-12: scale(calc(0.5 + #{$scale-step} * 1));
+    }
+
+    83.33% {
+        --color-1: #CFFFFE;
+        --color-2: #B0FFFD;
+        --color-3: #8AFBF8;
+        --color-4: #3EECE7;
+        --color-5: #36E5E0;
+        --color-6: #2DDCD7;
+        --color-7: #1BC7C2;
+        --color-8: #1BC7C2;
+        --color-9: #14BAB5;
+        --color-10: #14BAB5;
+        --color-11: #D7FAF9;
+        --color-12: #CFFFFE;
+        --transform-1: translate(-50%, 0)  scale(calc(0.5 + #{$scale-step} * 1));
+        --transform-2: scale(calc(0.5 + #{$scale-step} * 2));
+        --transform-3: scale(calc(0.5 + #{$scale-step} * 3));
+        --transform-4: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 4));
+        --transform-5: scale(calc(0.5 + #{$scale-step} * 5));
+        --transform-6: scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-7: translate(-50%, 0) scale(calc(0.5 + #{$scale-step} * 7));
+        --transform-8: scale(calc(0.5 + #{$scale-step} * 8));
+        --transform-9: scale(calc(0.5 + #{$scale-step} * 9));
+        --transform-10: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 10));
+        --transform-11: scale(1);
+        --transform-12: scale(0.5);
+    }
+
+    91.66% {
+        --color-1: #D7FAF9;
+        --color-2: #CFFFFE;
+        --color-3: #B0FFFD;
+        --color-4: #8AFBF8;
+        --color-5: #3EECE7;
+        --color-6: #36E5E0;
+        --color-7: #2DDCD7;
+        --color-8: #1BC7C2;
+        --color-9: #1BC7C2;
+        --color-10: #14BAB5;
+        --color-11: #14BAB5;
+        --color-12: #D7FAF9;
+        --transform-1: translate(-50%, 0) scale(calc(0.5 + #{$scale-step} * 1));
+        --transform-2: scale(calc(0.5 + #{$scale-step} * 2));
+        --transform-3: scale(calc(0.5 + #{$scale-step} * 3));
+        --transform-4: translate(0, -50%)   scale(calc(0.5 + #{$scale-step} * 4));
+        --transform-5: scale(calc(0.5 + #{$scale-step} * 5));
+        --transform-6: scale(calc(0.5 + #{$scale-step} * 6));
+        --transform-7: translate(-50%, 0) scale(calc(0.5 + #{$scale-step} * 7));
+        --transform-8: scale(calc(0.5 + #{$scale-step} * 8));
+        --transform-9: scale(calc(0.5 + #{$scale-step} * 9));
+        --transform-10: translate(0, -50%) scale(calc(0.5 + #{$scale-step} * 10));
+        --transform-11: scale(1);
+        --transform-12: scale(0.5);
+    }
+
+}
+
+@media (max-width: 768px) {
+    .loader {
+      width: 12em;
+      height: 12em;
+      font-size: 14px;
+    }
+}

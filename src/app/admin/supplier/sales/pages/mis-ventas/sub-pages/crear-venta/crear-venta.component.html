@@ -1,0 +1,156 @@
+<div class="formu">
+ <div class="div_combo">
+  <div class="combo">
+    <mat-select   class="combito" placeholder="Tipo de Cuenta"  [(ngModel)]="comboSelected">
+      <mat-option *ngFor="let item of typeAccount" [value]="item.id">
+        {{item.name}}
+      </mat-option>
+  </mat-select>
+  </div>
+  <button mat-flat-button class="btn_create" (click)="typeTable()">
+   Buscar
+  </button>
+ </div>
+
+
+ <!-- aca va la tabla -->
+ <div class="main" *ngIf="typeTableSelected !== 0">
+  <div class="main-table">
+    <div class="lote_header">
+      <div class="container_title_btn">
+
+
+      </div>
+
+
+    </div>
+    <div class="table-head">
+      <div class="paginador">
+        <h4>Mostrar</h4>
+        <select class="select-pag" [(ngModel)]="group" >
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="75">75</option>
+          <option value="100">100</option>
+        </select>
+        <p>Registros</p>
+      </div>
+      <div class="space"></div>
+      <div class="buscador">
+        <input
+          type="text"
+          class="buscador-input"
+          placeholder="Buscar"
+          [(ngModel)]="filterTable"
+
+        />
+        <img class="lupa" src="../../../../../../assets/svg/icon_lupa.svg" alt="" />
+      </div>
+    </div>
+    <!--tabla cuerpo -->
+    <div class="table-body" >
+      <table>
+        <tr class="table-body-head" >
+          <td *ngFor="let colum of columsTable">
+            <div style="display: inline-flex;">
+              <h4  (click)="handleSort(colum)">{{colum}} <img src="assets/svg/sort.svg" alt=""></h4>
+              <img  src="/assets/svg/account/info.svg" [matTooltip]=tooltip matTooltipPosition="above" *ngIf="colum == 'Fecha de Vencimiento' ">
+            </div>
+
+          </td>
+        </tr>
+        <tr
+
+          class="{{ cuentaSelectedSearched && item.id_service === cuentaSelected  ?  'table-body-row-selected' : 'table-body-row'}}"
+          *ngFor="
+            let item of sortServiceData
+              | paginate : { itemsPerPage: group, currentPage: page } | filter: filterTable
+          "
+        >
+
+          <td>{{item.id_service}}</td>
+          <td>{{item.plataforma}}</td>
+          <td>{{item.mail_account}}</td>
+          <td  *ngIf="typeTableSelected ==2">{{item.cantidad_usadas}}</td>
+
+          <td *ngIf="typeTableSelected ==2">{{item.number_profiles}}</td>
+
+
+
+          <td> <div >
+            <button (click)="InfoClientPlatformService(item)">
+              Ver Cuenta
+            </button>
+
+          </div>
+          <div>
+
+          </div>
+        </td>
+        </tr>
+      </table>
+    </div>
+    <!-- fin tabla cuerpo f-->
+
+    <div class="table-foot">
+      <h4>
+        Del
+        {{ ((page > 1 ? page : 1) - 1) * group + 1 }} al
+        {{
+          ((page > 1 ? page : 1) - 1) * group + group > p.getTotalItems()
+            ? p.getTotalItems()
+            : (((page > 1 ? page : 1) - 1) * group + group | number : "2.0")
+        }}
+        de {{ p.getTotalItems() }} registros
+        {{ filterTable != "" ? "(filtrados de " + size + " registros)" : "" }}
+      </h4>
+      <div class="foot-botones">
+        <pagination-template #p="paginationApi" (pageChange)="page = $event">
+          <div class="custom-pagination">
+            <button
+              mat-mini-fab
+              (click)="p.previous()"
+              disabled="{{ p.isFirstPage() }}"
+              class="foot-boton {{ p.isFirstPage() ? 'blanco' : '' }} "
+            >
+              <mat-icon>arrow_back</mat-icon>
+            </button>
+            <div
+              class="page-number"
+              *ngFor="let page of p.pages"
+              [class.current]="p.getCurrent() === page.value"
+            >
+              <span
+                (click)="p.setCurrent(page.value)"
+                *ngIf="p.getCurrent() !== page.value"
+                >{{ page.label }}</span
+              >
+              <div *ngIf="p.getCurrent() === page.value">
+                <span>{{ page.label }}</span>
+              </div>
+            </div>
+            <button
+              mat-mini-fab
+              (click)="p.next()"
+              disabled="{{ p.isLastPage() }}"
+              class="foot-boton {{ p.isLastPage() ? 'blanco' : '' }} "
+            >
+              <mat-icon>arrow_forward</mat-icon>
+            </button>
+          </div>
+        </pagination-template>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- <app-info-venta></app-info-venta> -->
+<app-loading *ngIf="loading"></app-loading>
+<br>
+<div  *ngIf="this.cuentaSelectedSearched">
+  <!-- <app-form-venta  [infoServiceData]="infoServiceData"  (event)="methodCancel($event)"></app-form-venta> -->
+</div>

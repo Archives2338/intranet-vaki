@@ -1,0 +1,167 @@
+
+
+<div class="main">
+  <div class="main-table">
+    <div class="lote_header">
+      <div class="container_title_btn">
+        <h1 class="title_lote_header"><strong>{{namePlatform}}</strong></h1>
+        <button class="btn_create" mat-flat-button   routerLink="/admin/sales/mis-ventas/crear-venta">Nueva Venta</button>
+      </div>
+
+      <div class="green_divider"></div>
+    </div>
+    <div class="table-head">
+      <div class="paginador">
+        <h4>Mostrar</h4>
+        <select class="select-pag" [(ngModel)]="group" >
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="75">75</option>
+          <option value="100">100</option>
+        </select>
+        <p>Registros</p>
+      </div>
+      <div class="space"></div>
+      <div class="buscador">
+        <input
+          type="text"
+          class="buscador-input"
+          placeholder="Buscar"
+          [(ngModel)]="filterTable"
+
+        />
+        <img class="lupa" src="../../../../../../assets/svg/icon_lupa.svg" alt="" />
+      </div>
+    </div>
+    <!--tabla cuerpo -->
+    <div class="table-body">
+      <table>
+        <tr class="table-body-head" >
+          <td *ngFor="let colum of columsTable">
+            <div style="display: inline-flex;">
+              <h4  (click)="handleSort(colum)">{{colum}} <img src="assets/svg/sort.svg" alt=""></h4>
+              <img  src="/assets/svg/account/info.svg" [matTooltip]=tooltip matTooltipPosition="above" *ngIf="colum == 'Fecha de Vencimiento' ">
+            </div>
+
+          </td>
+        </tr>
+        <tr
+          class="table-body-row"
+          *ngFor="
+            let item of sortServiceData | filter: filterTable
+              | paginate : { itemsPerPage: group, currentPage: page }
+          "
+        >
+
+          <td>{{item.id_supplier_service}}</td>
+          <td>{{item.cliente}}</td>
+          <td>{{item.correo}}</td>
+          <td>{{item.nombre}}</td>
+          <td>$/. {{item.cobro}}</td>
+          <td>
+            <div *ngIf="item.estado == 'Vencio'" style="display: flex;justify-content: center;">
+                <div class="circle_red"  matTooltip="Cuenta Vencida" matTooltipPosition="above" >
+
+                </div>
+            </div>
+            <div *ngIf="item.estado == 'Vigente'" style="display: flex;justify-content: center;">
+                <div class="circle_green" matTooltip="Cuenta Vigente" matTooltipPosition="above" >
+
+                </div>
+            </div>
+          </td>
+          <td>{{item.diasVencidos}}</td>
+          <td>{{item.fecha_cobro| date: 'dd/MM/yyyy'}}</td>
+
+
+          <td> <div style="display: flex; justify-content: center; align-items: center ; gap: 25px;" >
+
+
+
+          <button
+          mat-flat-button
+          class="btn-act purple"
+          matTooltip="Editar cuenta"
+          routerLink="/admin/sales/mis-ventas/editar-venta/{{item.id_supplier_service}}"
+        >
+          <img src="assets/svg/editar-afiliado.svg" alt="" />
+        </button>
+
+        <button  mat-flat-button class="btn-act green"
+          (click)="openModalRenovar(item)"
+        matTooltip="Renovar cuenta" >
+          <img src="assets/svg/renovar.svg" alt="" />
+        </button>
+          <button  mat-flat-button
+          class="btn-act red"
+          matTooltip="Eliminar Venta"
+          (click)="openModalConfirm(item.id_supplier_service)"
+         >
+            <img src="assets/svg/Vector.svg" alt="" />
+          </button>
+
+
+          </div>
+          <div>
+
+          </div>
+        </td>
+        </tr>
+      </table>
+    </div>
+    <!-- fin tabla cuerpo f-->
+
+    <div class="table-foot">
+      <h4>
+        Del
+        {{ ((page > 1 ? page : 1) - 1) * group + 1 }} al
+        {{
+          ((page > 1 ? page : 1) - 1) * group + group > p.getTotalItems()
+            ? p.getTotalItems()
+            : (((page > 1 ? page : 1) - 1) * group + group | number : "2.0")
+        }}
+        de {{ p.getTotalItems() }} registros
+        {{ filterTable != "" ? "(filtrados de " + size + " registros)" : "" }}
+      </h4>
+      <div class="foot-botones">
+        <pagination-template #p="paginationApi" (pageChange)="page = $event">
+          <div class="custom-pagination">
+            <button
+              mat-mini-fab
+              (click)="p.previous()"
+              disabled="{{ p.isFirstPage() }}"
+              class="foot-boton {{ p.isFirstPage() ? 'blanco' : '' }} "
+            >
+              <mat-icon>arrow_back</mat-icon>
+            </button>
+            <div
+              class="page-number"
+              *ngFor="let page of p.pages"
+              [class.current]="p.getCurrent() === page.value"
+            >
+              <span
+                (click)="p.setCurrent(page.value)"
+                *ngIf="p.getCurrent() !== page.value"
+                >{{ page.label }}</span
+              >
+              <div *ngIf="p.getCurrent() === page.value">
+                <span>{{ page.label }}</span>
+              </div>
+            </div>
+            <button
+              mat-mini-fab
+              (click)="p.next()"
+              disabled="{{ p.isLastPage() }}"
+              class="foot-boton {{ p.isLastPage() ? 'blanco' : '' }} "
+            >
+              <mat-icon>arrow_forward</mat-icon>
+            </button>
+          </div>
+        </pagination-template>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <app-modal-type-file></app-modal-type-file> -->
+<app-loading *ngIf="loading"></app-loading>

@@ -1,0 +1,83 @@
+<div >
+  <div class="header"  *ngIf="typeModal == 1">
+    <p>Informacion de la cuenta</p>
+  </div>
+  <div  [ngClass]="typeModal == 1?'view':'view ocultado'"  style="padding: 40px;">
+    <div class="container_info">
+      <div class="container_profiles">
+
+        <swiper-container #swiperElem init="false">
+          <ng-container *ngFor="let item of arrayCantPerfiles; let x=index">
+            <swiper-slide>
+              <div class="container_circle_text">
+                <div
+                  [className]="
+                    item.name !== 'libre' ? 'circle' : 'circle_disabled'
+                  "
+                  [matTooltip]="
+                    item.name !== 'libre' ? 'Perfil Alquilado' : 'Perfil Libre'
+                  "
+                  matTooltipPosition="left"
+                  (click)="typeModalChange(item,x)"
+                >
+                  <img src="/assets/img/avatar.png" class="imgs" alt="" />
+                </div>
+                <div class="container_text">
+                  <p class="name">{{ item.name }}</p>
+                  <p class="pin">PIN : {{ item.pin_profile }}</p>
+                  <p class="date">
+                    Fecha Cobro: {{ item.date == "" ? "Ninguno" : item.date }}
+                  </p>
+                  <div class="leyenda">
+                    <div>
+                      <div *ngIf="item.status == true" class="circle_green"></div>
+                      <div *ngIf="item.status == false" class="circle_red"></div>
+                      <div
+                        *ngIf="item.status == undefined || null"
+                        class="circle_gray"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>
+          </ng-container>
+        </swiper-container>
+      </div>
+    </div>
+
+    <div class="leyenda">
+      <div class="flo">
+        <div class="ti1">
+          <div class="ob">
+            <div class="circulo"></div>
+            <div class="ti">Sin Vencer</div>
+          </div>
+          <div class="ob">
+            <div class="circulo3"></div>
+            <div class="ti3">Vencido</div>
+          </div>
+          <div class="ob">
+            <div class="circulo2"></div>
+            <div class="ti2">Sin Asignacion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="add" *ngIf="typeModal ==3">
+
+    <app-form-venta [infoServiceData]="infoServiceData" (event)="methodEvent($event)"></app-form-venta>
+  </div>
+  <div class="edit" *ngIf="typeModal ==2">
+
+    <!-- aca vamos a pasarle por input la data del cliente o creamos otro modal? :S duda existencial
+     -->
+
+     <app-form-edit-venta [infoServiceData]="infoServiceData"  (event)="methodEvent($event)"></app-form-edit-venta >
+  </div>
+</div>

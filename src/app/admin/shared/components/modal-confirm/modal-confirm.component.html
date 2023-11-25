@@ -1,0 +1,14 @@
+<div class="modal-confirm">
+  <div class="modal-confirm__container">
+    <div class="modal-confirm__header">
+      <h2 class="modal-confirm__title">{{ title }}</h2>
+      <img src="assets/img/type.webp" alt="">
+    </div>
+
+    <div class="modal-confirm__footer">
+      <button class="modal-confirm__button modal-confirm__button--cancel" (click)="onCancel()">{{ cancelText }}</button>
+      <button class="modal-confirm__button modal-confirm__button--confirm" (click)="onConfirm()">{{ confirmText }}</button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,102 @@
+.header {
+  width: 95%;
+  height: 76px;
+  margin: 1rem auto 0.5rem auto;
+  // background: #ffffff;
+  background-color: #9799cd;
+  box-shadow: 0px 0px 12px rgba(198, 226, 255, 0.506687);
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-evenly;
+
+  .title {
+    padding-left: 20px;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    color: white;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+
+    p {
+      span:last-child {
+        color: white;
+      }
+    }
+  }
+
+  .info {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 29px;
+    .nombre {
+      text-align: center;
+      .nameClinica {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        /* identical to box height, or 131% */
+
+        text-align: center;
+        letter-spacing: 0.0228571px;
+
+        // color: #01387b;
+        color: white;
+      }
+      p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 21px;
+        /* identical to box height, or 162% */
+
+        text-align: center;
+        letter-spacing: 0.0185714px;
+
+        color: white;
+      }
+    }
+    .foto {
+      cursor: pointer;
+      height: 4em;
+      width: 4em;
+      flex-shrink: 0;
+      background: white;
+      margin: 0 1rem;
+      position: relative;
+      /* border: 0.2px dashed blue; */
+      border-radius: 50%;
+      border: 1px dashed #3ea3ef;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .foto::before {
+      content: "";
+      background-image: url(/assets/svg/header/oval-disp.svg);
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 62px;
+      width: 60px;
+      z-index: 1;
+      display: flex;
+      max-width: 540px;
+    }
+  }
+}

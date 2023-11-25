@@ -1,0 +1,84 @@
+<div class="header d-flex justify-center">
+  <nav class="nav">
+    <a href="">
+      <img
+        src="assets/svg/logos/logo1.svg"
+        alt="logo"
+        class="logo"
+        width="148"
+      />
+    </a>
+    <div class="d-flex align-center">
+      <a
+        class="v-btn v-btn--active v-theme--light v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-text d-none d-md-flex mr-2 letter-big"
+        href="/"
+        style="color: rgb(255, 255, 255); caret-color: rgb(255, 255, 255)"
+        ><span class="v-btn__overlay"></span
+        ><span class="v-btn__underlay"></span
+        ><!----><span class="v-btn__content" data-no-activator=""
+          >PÁGINA DE INICIO</span
+        ><!----><!----></a
+      >
+      <a
+        class="v-btn v-btn--active v-theme--light v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-text d-none d-md-flex mr-2 letter-big"
+        href="/"
+        style="color: rgb(255, 255, 255); caret-color: rgb(255, 255, 255)"
+        ><span class="v-btn__overlay"></span
+        ><span class="v-btn__underlay"></span
+        ><!----><span class="v-btn__content" data-no-activator="">AFILIATE</span
+        ><!----><!----></a
+      >
+      <a
+        class="v-btn v-btn--active v-theme--light v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-text d-none d-md-flex mr-2 letter-big"
+        href="/"
+        style="color: rgb(255, 255, 255); caret-color: rgb(255, 255, 255)"
+        ><span class="v-btn__overlay"></span
+        ><span class="v-btn__underlay"></span
+        ><!----><span class="v-btn__content" data-no-activator=""
+          >SOPORTE-POSTVENTA</span
+        ><!----><!----></a
+      >
+
+      <a
+        class="v-btn v-btn--active v-theme--light v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-text d-none d-md-flex mr-2 letter-big"
+        href="/"
+        style="color: rgb(255, 255, 255); caret-color: rgb(255, 255, 255)"
+        ><span class="v-btn__content" data-no-activator="">SUSCRIPCION</span
+        ><!----><!----></a
+      >
+      <button
+        data-v-e4b98d67=""
+        type="button"
+        class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-large v-btn--variant-text"
+        targetref="[object Object]"
+        aria-haspopup="menu"
+        aria-expanded="true"
+        aria-owns="v-menu-27"
+        style="color: rgb(255, 255, 255); caret-color: rgb(255, 255, 255)"
+        [matMenuTriggerFor]="menu"
+      >
+
+        <span class="v-btn__content" data-no-activator=""
+          ><div
+            data-v-e4b98d67=""
+            class="v-avatar v-theme--light v-avatar--density-default v-avatar--size-default v-avatar--variant-flat"
+          >
+          <mat-icon *ngIf="img == ''">account_circle</mat-icon>
+          <img
+          style="border-radius: 50%;"
+            *ngIf="img != ''"
+           [src]="img"
+            alt="avatar"
+            class="avatar"
+            width="40"
+          />
+          </div></span
+        >
+      </button>
+    </div>
+  </nav>
+</div>
+<mat-menu #menu="matMenu">
+  <p mat-menu-item (click)="login()" >Login</p>
+  <p mat-menu-item (click)="logout()">LogOut</p>
+</mat-menu>

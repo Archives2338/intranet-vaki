@@ -1,0 +1,28 @@
+.type_btn{
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+
+
+
+  .btn_create {
+    background: #76c8ba;
+    border-radius: 25px;
+    width: 224px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+  }
+  .clicked{
+
+  }
+}

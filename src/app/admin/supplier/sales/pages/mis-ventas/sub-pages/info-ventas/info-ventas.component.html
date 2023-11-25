@@ -1,0 +1,11 @@
+<div class="type_btn">
+  <button mat-flat-button class="btn_create" (click)="getSaleAccountComplete()" >
+      Cuentas Completas
+  </button>
+  <button mat-flat-button class="btn_create" (click)="getSaleAccountCompleteProfile()">
+    Cuentas Por Perfiles
+  </button>
+</div>
+
+<app-table-mis-ventas [data]="sortSaleData"></app-table-mis-ventas>
+<app-loading *ngIf="loading"></app-loading>

@@ -1,0 +1,131 @@
+<div class="main">
+    <div class="main-table">
+        <div class="lote_header">
+            <div class="container_title_btn">
+                <h1 class="title_lote_header"><strong>{{namePlatform}}</strong></h1>
+                <label class="label-input">
+                    <span>Subir Excel</span>
+                    <img src="assets/icons/excel.svg" alt="excel" />
+                    <input type="file" (change)="onFileChange($event)" />
+                </label>
+                <a class="label-input" href="assets/excel/clients.xlsx" download="plantilla.xlsx">
+                    <span>Descargar Plantilla</span>
+                    <img src="assets/icons/excel.svg" alt="excel" />
+                </a>
+                <button class="btn_create" mat-flat-button (click)="createClient()">Nuevo cliente</button>
+            </div>
+            <div class="green_divider"></div>
+        </div>
+        <div class="table-head">
+          <div class="paginador">
+            <h4>Mostrar</h4>
+            <select class="select-pag" >
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="75">75</option>
+              <option value="100">100</option>
+            </select>
+            <p>Registros</p>
+          </div>
+          <div class="space"></div>
+          <div class="buscador">
+            <input
+              type="text"
+              class="buscador-input"
+              placeholder="Buscar"
+              [(ngModel)]="filterTable"
+
+            />
+            <!-- <img class="lupa" src="../../../../../../assets/svg/icon_lupa.svg" alt="" /> -->
+          </div>
+        </div>
+        <div class="content">
+            <div class="fechas">
+                <div class="desc" *ngFor="let item of sortServiceData | filter: filterTable | paginate: { itemsPerPage: group, currentPage: page  }">
+                    <div class="desc_info">
+                        <img style="width: 2.5em;flex-shrink: 0;" src="assets/icons/client.svg" alt="client" />
+                            <!-- <span class="hour">a </span> -->
+                        <div class="desc_info_name" style="width: 100%;">
+                            <div class="contenidoName">
+                                <p class="name_title">{{item.name}}</p>
+                                <img *ngIf="item.gender" style="width: 1em; height: 1.5em;" src="assets/icons/{{item.gender==='M' ? 'male':'female'}}.svg" alt="{{item.gender}}" />
+                            </div>
+                            <div class="contenido">
+                                <div class="left">
+                                    <p>Nombre</p>
+                                    <p>Apellidos</p>
+                                    <p>Télefono</p>
+                                    <p>Correo</p>
+                                </div>
+                                <div class="right">
+                                    <span>{{item.name}}</span>
+                                    <span>{{item.lastname}}</span>
+                                    <span>{{ item.prefix ?? ''}} {{item.phone}}</span>
+                                    <span>{{item.mail}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc_btn">
+                        <div class="btn_detalle" (click)="selectClient(item.id)" >
+                            <!-- <img src="assets/icon/historiaclinica.svg" alt="" /> -->
+                            <p>Acciones</p>
+                        </div>
+                        <div class="btn_detalle_white colorGoTo" routerLink="/admin/client/seguimiento/{{item.id}}">
+                            <!-- <img src="assets/icon/initVidLlamadaGoTo.svg" alt="" /> -->
+                            <p>Ver Detalles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="wrapperPag">
+                <div class="foot-botones">
+                    <pagination-template #p="paginationApi" (pageChange)="page = $event">
+                    <div class="custom-pagination">
+                        <button
+                        mat-mini-fab
+                        (click)="p.previous()"
+                        disabled="{{ p.isFirstPage() }}"
+                        class="foot-boton {{ p.isFirstPage() ? 'blanco' : '' }} "
+                        >
+                        <mat-icon>arrow_back</mat-icon>
+                        </button>
+
+                        <div
+                        class="page-number"
+                        *ngFor="let page of p.pages"
+                        [class.current]="p.getCurrent() === page.value"
+                        >
+                        <span
+                            (click)="p.setCurrent(page.value)"
+                            *ngIf="p.getCurrent() !== page.value"
+                            >{{ page.label }}</span
+                        >
+                        <div *ngIf="p.getCurrent() === page.value">
+                            <span>{{ page.label }}</span>
+                        </div>
+                        </div>
+
+                        <button
+                        mat-mini-fab
+                        (click)="p.next()"
+                        disabled="{{ p.isLastPage() }}"
+                        class="foot-boton {{ p.isLastPage() ? 'blanco' : '' }} "
+                        >
+                        <mat-icon>arrow_forward</mat-icon>
+                        </button>
+                    </div>
+                    </pagination-template>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- <app-modal-type-file></app-modal-type-file> -->
+  <app-loading *ngIf="loading"></app-loading>
+
+
+

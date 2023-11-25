@@ -1,0 +1,32 @@
+<div class="header">
+  <div class="title">
+    <p>Home /</p>
+    <p *ngFor="let data of breadcrumbsUrl; let i = index">
+      <span *ngIf="i < breadcrumbsUrl.length - 1">
+        {{ data | titlecase }}
+      </span>
+      <span class="text-0" *ngIf="i < breadcrumbsUrl.length - 1">/</span>
+      <span class="text-1" *ngIf="i == breadcrumbsUrl.length - 1">
+        {{ data | titlecase }}
+      </span>
+    </p>
+  </div>
+  <div class="info" >
+    <div class="nombre">
+      <h4 class="nameClinica">{{name_supplier}}</h4>
+      <p>Proveedor</p>
+    </div>
+    <div class="foto" [matMenuTriggerFor]="menu">
+      <img src="{{srcImage || '/assets/svg/logo-empresa.svg'}}" alt="" />
+      <!-- <img src="/assets/svg/Oval.svg" alt=""> -->
+    </div>
+    <div class="i" [matMenuTriggerFor]="menu">
+      <img src="assets/svg/arrow_down.svg" alt="arrow_down" />
+    </div>
+  </div>
+</div>
+
+<mat-menu #menu="matMenu">
+  <p mat-menu-item routerLink="/admin/profile">Ver Perfil</p>
+  <p mat-menu-item (click)="logout()">Salir</p>
+</mat-menu>

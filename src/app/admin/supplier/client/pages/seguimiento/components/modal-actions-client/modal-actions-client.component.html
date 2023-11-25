@@ -1,0 +1,89 @@
+<div class="content-actions">
+    <button class="delete" style="display: none;">
+        Dar de baja
+    </button>
+    <form class="update-client-form" [formGroup]="formCreate">
+        <h2>ACTUALIZACIÓN DE CLIENTE</h2>
+        <div>
+            <h3>Nombre</h3>
+            <mat-form-field appearance="outline" class="input">
+            <input
+                type="text"
+                matInput
+                placeholder="Nombre"
+                formControlName="name"
+            />
+            <mat-error>Nombre inválido (min. 5 / max. 10 carácteres)</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <h3>Apellidos</h3>
+            <mat-form-field appearance="outline" class="input">
+            <input
+                type="text"
+                matInput
+                placeholder="Apellidos"
+                formControlName="lastname"
+            />
+            <mat-error>Apellido inválido (min. 5 / max. 20 carácteres)</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <h3>Correo</h3>
+            <mat-form-field appearance="outline" class="input">
+            <input
+                type="text"
+                matInput
+                placeholder="correo"
+                formControlName="mail"
+            />
+            <div matSuffix >
+                <img src="assets/icons/mail.svg" alt="mail" />
+            </div>
+            <mat-error>Correo inválido</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <h3>Teléfono</h3>
+            <div style="display: flex;gap: 1em;">
+              <mat-form-field appearance="outline" class="inputCel" style="width: 10em;flex-shrink: 0;">
+                <mat-select formControlName="prefix" >
+                  <mat-option *ngFor="let countrie of countries"  value="{{countrie.prefix}}">
+                      <div style="display: flex;gap: 1em;">
+                        <img style="width: 1.5em;" src="{{countrie.flag}}" alt="{{countrie.name}}">
+                        <span>{{countrie.prefix}}</span>
+                      </div>
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="inputCel" style="width: 100%;">
+                <input
+                  type="text"
+                  matInput
+                  placeholder="teléfono"
+                  formControlName="phone"
+                />
+                <mat-error>Teléfono inválido, solo números (min. 1 / max. 20 carácteres)</mat-error>
+              </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <h3>Género</h3>
+            <mat-form-field appearance="outline" class="inputCel" style="width: 100%;">
+              <mat-select formControlName="gender" >
+                <mat-option *ngFor="let gender of genders"  value="{{gender}}">
+                    {{gender==='M' ? 'Hombre':'Mujer'}}
+                </mat-option>
+              </mat-select>
+              <mat-error>Debe seleccionar un género</mat-error>
+            </mat-form-field>
+          </div> 
+        <p [ngStyle]="{
+            'display': validing ? '' : 'none'
+        }">Actualizando cliente...</p>
+        <button type="button" [ngClass]="{
+        btndisabled: validing
+        }" (click)="update()">Guardar Cambios</button>
+    </form>
+</div>
+

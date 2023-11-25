@@ -1,0 +1,72 @@
+.container {
+  .divContainer{
+    margin-top: 45px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    .containerImgText{
+      width: 93%;
+      display: flex;
+      .imgIcon{
+        margin-right: 22px;
+        img{
+          width: 65px;
+        }
+      }
+      .divTextTitle{
+        .title{
+          font-family: 'Metropolis';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 43px;
+      letter-spacing: 0.27px;
+      color: #01387B;
+        }
+        .subtitle{
+          font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: 0.0380952px;
+
+  color: #6A7183
+        }
+      }
+    }
+  }
+
+
+  .type_btn{
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+
+
+
+    .btn_create {
+      background: #76c8ba;
+      border-radius: 25px;
+      width: 224px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 18px;
+      text-align: center;
+      letter-spacing: 0.3px;
+      color: #ffffff;
+    }
+    .clicked{
+
+    }
+  }
+
+
+
+}
